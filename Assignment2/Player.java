@@ -4,14 +4,7 @@ public class Player{
 
     public int numPlayers;
     SeLinkList head;
-    private PlayerData[] data;
-    private PlayerData player;
-
-
-
-
-
-
+    
     public void addPlayer(int a, int b, int c){
         SeLinkList node = new SeLinkList(a, b, c);
         if(head == null){
@@ -38,6 +31,21 @@ public class Player{
     }
 
 
+    //initializeList based on add player and player data
+    public Player initializeList(Player play){
+        PlayerData playerData = new PlayerData();
+        PlayerData[] data = playerData.getMyData();
+        Player playerList = play;
+        for(PlayerData p: data ){
+            playerList.addPlayer(p.a, p.b, p.c);
+            //System.out.println("Added Player with: ("+ p.a + " " + p.b + " " + p.c + ")");
+        }
+
+        return playerList;
+    }
+
+
+
     public static void main(String[] args){
         Player play = new Player();
         play.numPlayers = 10;
@@ -47,13 +55,17 @@ public class Player{
         PlayerData playerdata = new PlayerData();
         PlayerData[] myData = playerdata.getMyData();
 
-        for(PlayerData p: myData ){
-            System.out.println(p.a + " " + p.b + " " + p.c);
-        }
+        //for(PlayerData p: myData ){
+        //   System.out.println(p.a + " " + p.b + " " + p.c);
+        //}
 
         //Task7 Test
-        play.addPlayer(1, 5, 6);
-        play.addPlayer(2, 4, 6);
+        //play.addPlayer(1, 5, 6);
+        //play.addPlayer(2, 4, 6);
+        //play.display
+
+        //Task 8
+        play.initializeList(play);
         play.display();
         
     }
