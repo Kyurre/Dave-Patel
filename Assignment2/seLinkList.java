@@ -1,16 +1,24 @@
 package Assignment2;
 
-public class SeLinkList {
+public class SeLinkList{
     
     public int a, b, c;
     public SeLinkList next;
+    public int index = 0;
+
 
     
-    public SeLinkList(int a, int b, int c){
+    public SeLinkList(int index, int a, int b, int c){
         this.a = a;
         this.b = b;
         this.c = c;
         this.next = next;
+        this.index = updateIndex();
+    }
+
+    private int updateIndex(){
+        index += 1;
+        return index;
     }
     
 

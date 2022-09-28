@@ -6,7 +6,7 @@ public class Player{
     SeLinkList head;
     
     public void addPlayer(int a, int b, int c){
-        SeLinkList node = new SeLinkList(a, b, c);
+        SeLinkList node = new SeLinkList(0, a, b, c);
         if(head == null){
             head = node;
         }
@@ -23,7 +23,7 @@ public class Player{
     public void display(){
         SeLinkList node = head; 
         while(node.next != null){
-            System.out.printf("%d %d %d\n", node.a, node.b, node.c);
+            System.out.printf("%d %d %d %d\n ", node.a, node.b, node.c, node.index);
             node = node.next;
         }
         // print the final node
